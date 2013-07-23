@@ -4,7 +4,7 @@ app.use(express.logger());
 var fs = require('fs');
 var html = new Buffer(fs.readFile('index.html'), "utf-8")
 app.get('/', function(request, response) {
-    response.send(html.tostring());
+    response.send(html.tostring("utf-8"));
 });
 
 var port = process.env.PORT || 5000;
